@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <!-- <h2>BASE HTML {{cname}}</h2>
+    <img src="{% static 'images/1.jpeg'%}" alt="Books"> -->
+
+    
+    <div class="container-fluid  ">
+        <div class="row mb-2 w-100 flex-fill bd-highlight">
+            <div class="col-9">
+            {% block content %} {% endblock%}
+            </div>
+
+        </div>
+    </div>
+    <div class="p-4 col-3 ps-5">
+        <h4 class=" fst-italic position-sticky px-3 font-weight-bold fs-2" style=" border-left:6px solid red;">
+            ARCHIVES</h4>
+        <ol class=" list-unstyled mb-0 px-3 pb-2 ">
+
+            <li class="pb-1">
+                <i class="bi bi-arrow-right-square-fill fs-5"></i>
+                <a href="#" class="text-decoration-none text-reset fs-5">March 2021</a>
+            </li>
+            <li class="pb-1 ">
+                <i class="bi bi-arrow-right-square-fill fs-5"></i>
+                <a href="#" class="text-decoration-none text-reset fs-5">January 2021</a>
+            </li>
+            <li class="pb-1">
+                <i class="bi bi-arrow-right-square-fill fs-5"></i>
+                <a href="#" class="text-decoration-none text-reset fs-5 ">February 2021</a>
+            </li>
+            <li class="pb-1">
+                <i class="bi bi-arrow-right-square-fill fs-5"></i>
+                <a href="#" class="text-decoration-none text-reset fs-5">December 2020</a>
+            </li>
+            <li class="pb-1">
+                <i class="bi bi-arrow-right-square-fill fs-5"></i>
+                <a href="#" class="text-decoration-none text-reset fs-5">November 2020</a>
+            </li>
+            <li class="pb-1">
+                <i class="bi bi-arrow-right-square-fill fs-5"></i>
+                <a href="#" class="text-decoration-none text-reset fs-5">October 2020</a>
+            </li>
+            <li class="pb-1">
+                <i class="bi bi-arrow-right-square-fill fs-5"></i>
+                <a href="#" class="text-decoration-none text-reset fs-5">September 2020</a>
+            </li>
+            <li class="pb-1">
+                <i class="bi bi-arrow-right-square-fill fs-5"></i>
+                <a href="#" class="text-decoration-none text-reset fs-5">August 2020</a>
+            </li>
+            <li class="pb-1">
+                <i class="bi bi-arrow-right-square-fill fs-5"></i>
+                <a href="#" class="text-decoration-none text-reset fs-5">July 2020</a>
+            </li>
+            <li class="pb-1">
+                <i class="bi bi-arrow-right-square-fill fs-5"></i>
+                <a href="#" class="text-decoration-none text-reset fs-5">June 2020</a>
+            </li>
+            <li class="pb-1">
+                <i class="bi bi-arrow-right-square-fill fs-5"></i>
+                <a href="#" class="text-decoration-none text-reset fs-5">May 2020</a>
+            </li>
+            <li class="pb-1">
+                <i class="bi bi-arrow-right-square-fill fs-5"></i>
+                <a href="#" class="text-decoration-none text-reset fs-5">April 2020</a>
+            </li>
+        </ol>
+
+    </div>
+</body>
+</html>
