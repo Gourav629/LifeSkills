@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +19,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Open Interview</a>
+            <a class="navbar-brand" href="{{index}}">Open Interview</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -29,19 +28,26 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/home.html">HOME</a>
+                        <a class="nav-link active" aria-current="page" href="{{index}}">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about.html">ABOUT</a>
+                        <a class="nav-link" href="{{about}}">ABOUT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/interviews.html">INTERVIEWS</a>
+                        <a class="nav-link" href="{{inter}}">INTERVIEWS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/interviewers.html">INTERVIEWERS</a>
+                        <a class="nav-link" href="{{interviewer}}">INTERVIEWERS</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/translation.html">TRANSLATION</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            COURSES
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="https://canvas.instructure.com/enroll/HA48HK" target="_blank"> Teaching Social and Emotional Learning</a></li>
+                            <li><a class="dropdown-item" href="https://canvas.instructure.com/enroll/6YN77M" target="_blank">Life Skill in Education</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -70,7 +76,7 @@
                             <!-- <li>
                                 <hr class="dropdown-divider">
                             </li> -->
-                            <li><a class="dropdown-item" href="/download.html">Download/cite</a></li>
+                            <li><a class="dropdown-item" href="https://oe4bw.org/">Visit Open Education</a></li>
 
                             <li><a class="dropdown-item" href="/volunteers.html">Volunteers</a></li>
 
@@ -101,122 +107,85 @@
         </div>
     </nav>
 
-    <!-- <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://source.unsplash.com/1400x400/?teaching" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2>Reading is a good habit</h2>
-                    <p>All great leaders are good readers.</p>
-                    <button class="btn btn-success">Books</button>
-                    <button class="btn btn-danger">Interviews</button>
-                    <button class="btn btn-primary">Articles</button>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://source.unsplash.com/1400x400/?emotions" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2>So many books , so little time</h2>
-                    <p>Books are your best friend. Spend most time with them</p>
-                    <button class="btn btn-success">Books</button>
-                    <button class="btn btn-danger">Interviews</button>
-                    <button class="btn btn-primary">Articles</button>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://source.unsplash.com/1400x400/?social,learning" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2>Writing is an art</h2>
-                    <p>The more you practice, the more you'll become good at it</p>
-                    <button class="btn btn-success">Books</button>
-                    <button class="btn btn-danger">Interviews</button>
-                    <button class="btn btn-primary">Articles</button>
-                </div>
+<div style = "margin-bottom: 25px;"id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://source.unsplash.com/1400x400/?teaching" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h2>Reading is a good habit</h2>
+                <p>All great leaders are good readers.</p>
+                <button class="btn btn-success">Books</button>
+                <button class="btn btn-danger">Interviews</button>
+                <button class="btn btn-primary">Articles</button>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div> -->
-
-{% block content %}{% endblock content %}
-<!-- Archive Code -->
-
-<div class="p-4 col-3 ps-5">
-    <h4 class=" fst-italic position-sticky px-3 font-weight-bold fs-2" style=" border-left:6px solid red;">
-        ARCHIVES</h4>
-    <ol class=" list-unstyled mb-0 px-3 pb-2 ">
-
-        <li class="pb-1">
-            <i class="bi bi-arrow-right-square-fill fs-5"></i>
-            <a href="#" class="text-decoration-none text-reset fs-5">March 2021</a>
-        </li>
-        <li class="pb-1 ">
-            <i class="bi bi-arrow-right-square-fill fs-5"></i>
-            <a href="#" class="text-decoration-none text-reset fs-5">January 2021</a>
-        </li>
-        <li class="pb-1">
-            <i class="bi bi-arrow-right-square-fill fs-5"></i>
-            <a href="#" class="text-decoration-none text-reset fs-5 ">February 2021</a>
-        </li>
-        <li class="pb-1">
-            <i class="bi bi-arrow-right-square-fill fs-5"></i>
-            <a href="#" class="text-decoration-none text-reset fs-5">December 2020</a>
-        </li>
-        <li class="pb-1">
-            <i class="bi bi-arrow-right-square-fill fs-5"></i>
-            <a href="#" class="text-decoration-none text-reset fs-5">November 2020</a>
-        </li>
-        <li class="pb-1">
-            <i class="bi bi-arrow-right-square-fill fs-5"></i>
-            <a href="#" class="text-decoration-none text-reset fs-5">October 2020</a>
-        </li>
-        <li class="pb-1">
-            <i class="bi bi-arrow-right-square-fill fs-5"></i>
-            <a href="#" class="text-decoration-none text-reset fs-5">September 2020</a>
-        </li>
-        <li class="pb-1">
-            <i class="bi bi-arrow-right-square-fill fs-5"></i>
-            <a href="#" class="text-decoration-none text-reset fs-5">August 2020</a>
-        </li>
-        <li class="pb-1">
-            <i class="bi bi-arrow-right-square-fill fs-5"></i>
-            <a href="#" class="text-decoration-none text-reset fs-5">July 2020</a>
-        </li>
-        <li class="pb-1">
-            <i class="bi bi-arrow-right-square-fill fs-5"></i>
-            <a href="#" class="text-decoration-none text-reset fs-5">June 2020</a>
-        </li>
-        <li class="pb-1">
-            <i class="bi bi-arrow-right-square-fill fs-5"></i>
-            <a href="#" class="text-decoration-none text-reset fs-5">May 2020</a>
-        </li>
-        <li class="pb-1">
-            <i class="bi bi-arrow-right-square-fill fs-5"></i>
-            <a href="#" class="text-decoration-none text-reset fs-5">April 2020</a>
-        </li>
-    </ol>
+        <div class="carousel-item">
+            <img src="https://source.unsplash.com/1400x400/?emotions" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h2>So many books , so little time</h2>
+                <p>Books are your best friend. Spend most time with them</p>
+                <button class="btn btn-success">Books</button>
+                <button class="btn btn-danger">Interviews</button>
+                <button class="btn btn-primary">Articles</button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://source.unsplash.com/1400x400/?social,learning" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h2>Writing is an art</h2>
+                <p>The more you practice, the more you'll become good at it</p>
+                <button class="btn btn-success">Books</button>
+                <button class="btn btn-danger">Interviews</button>
+                <button class="btn btn-primary">Articles</button>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
-</body>
 
-<!-- End of Archive Code -->
+<div class="container-fluid  ">
+    <div class="row mb-2 w-100 flex-fill bd-highlight">
+        <div class="col-9">
+           
+            {% block content %} {% endblock content %}
+
+             
+        </div>
+
+        <div class="p-4 col-3 ps-5">
+            <h4 class=" fst-italic position-sticky px-3 font-weight-bold fs-2" style=" border-left:6px solid red;">
+                ARCHIVES</h4>
+            <ol class=" list-unstyled mb-0 px-3 pb-2 ">
+                {% for i in arch %}
+                <li class="pb-1">
+                    <i class="bi bi-arrow-right-square-fill fs-5"></i>
+                    <a href="#" class="text-decoration-none text-reset fs-5">{{i}}</a>
+                </li>
+               {% endfor %}
+        </div>
+    </div>
+</div>
 
 
+
+<div>
 <footer class="py-5 bg-dark text-primary mt-auto py-3 px-4 foo">
     <div class="row">
         <div class="col-6 col-md-2 mb-3">
@@ -280,6 +249,7 @@
         </ul>
     </div>
 </footer>
+</div>
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
