@@ -13,8 +13,8 @@ def Home(request):
 def Interview(request):
     return render(request, 'interviews.html')
 
-def InterViewers(request):
-    return render(request, 'interviews.html')
+def IViewers(request):
+    return render(request, 'books.html')
 
 def Blog(request):
     context = {
@@ -27,8 +27,54 @@ def Blog(request):
         "inter":'/inter',
         "interviewer":'/inter_viewer',
         "home":'/home',
+        "bg":'darkBG.jpg',
+        "vol":'/volunteer',
+        "vol_tra":'/vol_tra',
+        "con":'/contact',
     }
     return render(request, 'nbase.html',context)
 
 def Xyz(request):
     return render(request, 'xyz.html')
+
+
+def contact(request):
+    return render(request, 'books.html')
+
+def joinAsInter(request):
+    return render(request, 'books.html')
+
+def joinAsVolun(request):
+    return render(request, 'books.html')
+
+def joinAsTrans(request):
+    return render(request, 'books.html')
+
+def faqs(request):
+    return render(request, 'books.html')
+
+def recomInter(request):
+    return render(request, 'books.html')
+
+
+def volunters(request):
+    return render(request, 'books.html')
+
+def thirdParty(request):
+    return render(request, 'books.html')
+
+def usefulLinks(request):
+    return render(request, 'books.html')
+
+def testimonials(request):
+    return render(request, 'books.html')
+
+def feedback(request):
+    return render(request, 'books.html')
+
+def support(request):
+    return render(request, 'books.html')
+
+def desclaimer(request):
+    return render(request, 'books.html')
+
